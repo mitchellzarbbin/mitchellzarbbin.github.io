@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>neBuLa00_ - Developer Portfolio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'JetBrains Mono', 'Courier New', monospace;
+            background: #000;
+            color: #fff;
+            line-height: 1.8;
+            padding: 40px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #666;
+            border-radius: 50%;
+            animation: float 15s infinite linear;
+        }
+        
+        .particle:nth-child(odd) {
+            background: #555;
+            animation-duration: 20s;
+        }
+        
+        .particle:nth-child(3n) {
+            background: #777;
+            animation-duration: 25s;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.8;
+            }
+            90% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        .ascii-header {
+            text-align: center;
+            margin-bottom: 80px;
+            white-space: pre;
+            font-size: clamp(8px, 1.5vw, 16px);
+            color: #fff;
+        }
+        
+        .intro {
+            text-align: center;
+            margin-bottom: 60px;
+            color: #ccc;
+        }
+        
+        .section {
+            margin: 60px 0;
+        }
+        
+        .section-title {
+            color: #fff;
+            font-size: 18px;
+            margin-bottom: 30px;
+            text-transform: lowercase;
+        }
+        
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin: 40px 0;
+        }
+        
+        .skill-category h3 {
+            color: #fff;
+            margin-bottom: 15px;
+            font-size: 16px;
+            font-weight: normal;
+        }
+        
+        .skill-list {
+            list-style: none;
+            color: #888;
+        }
+        
+        .skill-list li {
+            padding: 2px 0;
+            font-size: 14px;
+        }
+        
+        .project {
+            margin: 30px 0;
+        }
+        
+        .project-title {
+            color: #fff;
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+        
+        .project-description {
+            color: #888;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+        
+        .project-tech {
+            color: #555;
+            font-size: 12px;
+        }
+        
+        .contact {
+            text-align: center;
+            margin: 80px 0;
+        }
+        
+        .contact-links {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 30px 0;
+        }
+        
+        .contact-link {
+            color: #888;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-link:hover {
+            color: #fff;
+        }
+        
+        .divider {
+            text-align: center;
+            margin: 60px 0;
+            color: #333;
+            font-size: 12px;
+        }
+        
+        @media (max-width: 600px) {
+            body {
+                padding: 20px 15px;
+            }
+            
+            .ascii-header {
+                font-size: 10px;
+            }
+            
+            .skills {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .contact-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="particles"></div>
+    
+    <div class="ascii-header">
+ ███▄    █ ▓█████  ▄▄▄▄    █    ██  ██▓    ▄▄▄       ▒█████   ▒█████  
+ ██ ▀█   █ ▓█   ▀ ▓█████▄  ██  ▓██▒▓██▒   ▒████▄    ▒██▒  ██▒▒██▒  ██▒
+▓██  ▀█ ██▒▒███   ▒██▒ ▄██▓██  ▒██░▒██░   ▒██  ▀█▄  ▒██░  ██▒▒██░  ██▒
+▓██▒  ▐▌██▒▒▓█  ▄ ▒██░█▀  ▓▓█  ░██░▒██░   ░██▄▄▄▄██ ▒██   ██░▒██   ██░
+▒██░   ▓██░░▒████▒░▓█  ▀█▓▒▒█████▓ ░██████▒▓█   ▓██▒░ ████▓▒░░ ████▓▒░
+░ ▒░   ▒ ▒ ░░ ▒░ ░░▒▓███▀▒░▒▓▒ ▒ ▒ ░ ▒░▓  ░▒▒   ▓▒█░░ ▒░▒░▒░ ░ ▒░▒░▒░ 
+░ ░░   ░ ▒░ ░ ░  ░▒░▒   ░ ░░▒░ ░ ░ ░ ░ ▒  ░ ▒   ▒▒ ░  ░ ▒ ▒░   ░ ▒ ▒░ 
+   ░   ░ ░    ░    ░    ░  ░░░ ░ ░   ░ ░    ░   ▒   ░ ░ ░ ▒  ░ ░ ░ ▒  
+         ░    ░  ░ ░         ░         ░  ░     ░  ░    ░ ░      ░ ░  
+                       ░                                              
+    </div>
+
+    <div class="intro">
+        developer / network engineer / automotive enthusiast
+    </div>
+
+    <div class="divider">
+        * * *
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">supporting</h2>
+        <div class="project">
+            <div class="project-title">raven development team</div>
+            <div class="project-description">open source privacy-focused software development making digital security accessible</div>
+            <div class="project-tech">privacy tools, debloating utilities, betanet protocol</div>
+        </div>
+        <div style="margin-top: 15px; color: #888; font-size: 14px;">
+            sponsor their work at <a href="https://buymeacoffee.com/ravendevteam" style="color: #ccc; text-decoration: none;">buymeacoffee.com/ravendevteam</a>
+        </div>
+    </div>
+
+    <div class="divider">
+        * * *
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">focus areas</h2>
+        <div class="skills">
+            <div class="skill-category">
+                <h3>networking</h3>
+                <ul class="skill-list">
+                    <li>network architecture</li>
+                    <li>system administration</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>design</h3>
+                <ul class="skill-list">
+                    <li>ui/ux development</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>automotive</h3>
+                <ul class="skill-list">
+                    <li>ecu programming</li>
+                    <li>diagnostic systems</li>
+                    <li>performance tuning</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="divider">
+        * * *
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">current focus</h2>
+        
+        <div class="project">
+            <div class="project-title">vx0net</div>
+            <div class="project-description">experimental ike/bgp vpn network architecture proof of concept</div>
+            <div class="project-tech">ike, bgp, vpn, network topology, proof of concept</div>
+        </div>
+        
+        <div class="project">
+            <div class="project-title">betanet development</div>
+            <div class="project-description">decentralized censorship-resistant network protocol with mixnode routing</div>
+            <div class="project-tech">quic, tls, cryptography, p2p networking, governance protocols</div>
+        </div>
+    </div>
+
+    <div class="divider">
+        * * *
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">other work</h2>
+        
+        <div class="project">
+            <div class="project-title">ike network with bgp for homelabs</div>
+            <div class="project-description">bgp routing implementation for homelab environments with ike vpn tunnels</div>
+            <div class="project-tech">bgp, ipsec, strongswan, frr, linux</div>
+        </div>
+        
+        <div class="project">
+            <div class="project-title">vw_flash ios/macos compatibility</div>
+            <div class="project-description">porting vw_flash ecu flashing tools to work natively on apple platforms</div>
+            <div class="project-tech">swift, core bluetooth, uds, ios, macos, ble</div>
+        </div>
+    </div>
+
+    <div class="divider">
+        * * *
+    </div>
+
+    <div class="contact">
+        <h2 class="section-title">connect</h2>
+        <div class="contact-links">
+            <a href="https://github.com/mitchellzarbbin" class="contact-link">github</a>
+            <a href="mailto:nebula00dev@pm.me" class="contact-link">email</a>
+        </div>
+    </div>
+
+    <div class="divider">
+        * * *
+    </div>
+
+    <div style="text-align: center; margin: 40px 0; color: #555; font-size: 12px;">
+        © 2025 nebula00.me - all rights reserved
+    </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Create particles
+    const particlesContainer = document.querySelector('.particles');
+    const particleCount = 25;
+    
+    for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.animationDelay = Math.random() * 15 + 's';
+        particle.style.animationDuration = (15 + Math.random() * 10) + 's';
+        particlesContainer.appendChild(particle);
+    }
+    
+    // Contact link hover effects
+    const links = document.querySelectorAll('.contact-link');
+    links.forEach(link => {
+        link.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-1px)';
+        });
+        link.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+        });
+    });
+});
+</script>
+
+</body>
+</html>
